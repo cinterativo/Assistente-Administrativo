@@ -1,0 +1,281 @@
+:root{
+    --cashIn: LightSeaGreen 0% 0%;
+    --cashOut: indianred 0% 0%;
+    --balance: thistle 0% 0%; 
+    --display: flex;
+    --displayReport: none;  
+    --printButton: none;  
+    --mainDisplay: flex;
+    --footerDisplay: none;  
+  } 
+  
+  html { 
+    font-size: 16px; 
+    font-family: sans-serif;   
+    border: none;
+    margin: none;
+    padding: none; 
+    touch-action: pan-x pan-y;  
+  }
+  
+body{
+    width: calc(100vw - 16px);
+    height: calc(100vh - 16px);   
+    background-color: black;
+    box-shadow:inset 0 8px 6px -3px blueviolet;
+    display: grid;
+    grid-template-rows: auto 1fr;    
+    overflow-y: hidden;
+}
+
+fieldset{
+    margin-top: 12px;
+    border: solid thistle 1px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    legend{
+        font-size: 20px;
+        font-weight: bolder;
+        letter-spacing: 3px;
+        color: yellow;}
+}
+
+header{ 
+    display: flex;
+    justify-content: center;
+    h1{ 
+        font-size: 18px;
+        font-weight: 900;
+        letter-spacing: 3px;
+        padding: 0 12px; 
+        border-radius: 6px;
+        background-color: thistle;
+    }
+}
+
+main{
+    margin: 16px;    
+    border-radius: 6px;
+    display: var(--mainDisplay);
+    flex-direction: column;
+    gap: 32px;
+    overflow: hidden;
+}
+
+form[id="formInput"]{
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    border-radius: 6px;    
+    border-bottom: solid  12px darkblue;
+    background-color: #D9AFD9;
+    background-image: linear-gradient(to left, gainsboro , LightGray, gainsboro);   
+}
+
+
+input[type="date"]{
+    font-size: 16px;
+    padding: 6px;
+    padding-left: 12px;
+    border-radius: 12px;
+    border: none;
+    border-bottom: solid 4px navy;
+    background-color: silver;
+}
+input[type="date"]::before {border-bottom: solid 4px white;}
+
+select{
+    font-size: 16px;
+    padding: 6px;
+    padding-left: 12px;
+    border-radius: 12px;
+    border: none;
+    border-bottom: solid 4px navy;
+    background-color: silver;
+}
+
+select:disabled{
+    cursor:not-allowed;
+    border-bottom: solid 4px white;
+}
+
+input[type="text"]{
+    font-size: 16px;
+    padding: 6px;
+    padding-left: 12px;
+    border-radius: 12px;
+    border: none;
+    border-bottom: solid 4px navy;
+    background-color: silver;
+}
+input[type="text"]:disabled{
+    cursor:not-allowed;
+    border-bottom: solid 4px white;
+}
+
+input[type="text"]:invalid{color: darkmagenta;}
+
+div, input[type=button]{   
+    padding: 3px;     
+    display: flex;
+    justify-content: space-around;    
+}
+
+
+div, input[type=button]:first-child{background-color: lightcoral;}
+
+div, input[type=button]:nth-child(2){background-color: rebeccapurple;}
+
+input[type=button]{
+    font-size: 18px;
+    font-weight: bolder;
+    letter-spacing: 3px;
+    color: white;
+    border-radius: 6px;
+    box-shadow: inset 1px 0px 6px 0px darkblue;
+}
+
+input[type=button]:active{opacity: 0;}
+
+input[type=button]:disabled{cursor: not-allowed;}
+
+dialog[id="dialog"]{
+    min-width: 60%;
+    padding: 16px;
+    border-radius: 16px;
+    border: solid darkmagenta 6px;
+    box-shadow:inset 0px 3px 0px 3px  white;
+    background-image: linear-gradient(to left, navajowhite, BlanchedAlmond, navajowhite);             
+}
+
+dialog[id="dialog"] > input[type=text]{
+    width: calc(100% - 16px);
+    margin-bottom: 32px;
+}
+
+dialog[id="dialog"] > div{width: calc(100% - 12px);}
+
+section[id="tableContainer"]{ 
+    margin-bottom: 12px;
+    padding:0 16px 12px;
+    background-color: thistle;  
+    border-radius: 5px;   
+    overflow: auto;    
+}
+
+table[id="tableData"]{
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table[id="tableData"] thead{
+    top: 0 !important; 
+    position: sticky; 
+    font-size: larger;
+    font-weight: bolder;  
+    background:linear-gradient(to right bottom, teal, royalblue, teal );  
+    color: #ffffff;
+    box-shadow: 0 .4rem .3rem black;     
+}
+
+table[id="tableData"] > thead >tr .filter{background-color: purple;}
+
+/* table[id="tableData"] > thead > tr:nth-child(1){border: none;}
+table[id="tableData"] > thead > tr:nth-child(1):first-child{font-weight: bolder;}  */
+table[id="tableData"] > thead > tr  th:nth-child(1){display: none;}
+table[id="tableData"] > tbody > tr  td:nth-child(1){display: none;}
+table[id="tableData"] > thead > tr  th:nth-child(5){text-align: right;}
+table[id="tableData"] > tbody > tr  td:nth-child(5){text-align: right;}
+table[id="tableData"] > thead > tr  th:last-child{text-align: right;}
+table[id="tableData"] > tbody > tr  td:last-child{text-align: right;}
+table[id="tableData"] > tbody > tr > td{
+    padding: 3px;
+    box-shadow: 0 1px;
+}
+
+
+/** footer */
+footer{    
+    margin: 12px;
+    display: var(--footerDisplay);
+    flex-direction: column;  
+    overflow-y: auto;   
+}
+
+ul[id="report"]{    
+    width: max-content; 
+    padding-right: 16px;
+    list-style-type: none;  
+    border-radius: 6px; 
+    background-color: Cornsilk; 
+    text-wrap: nowrap;        
+}
+
+ul[id="report"] > li[class="header"]{
+    font-size: 20px;
+    font-weight: bolder;
+    background-color: blueviolet;
+    color: cornsilk;
+    text-wrap: nowrap;
+    position: sticky; 
+    display: flex;
+    justify-content: space-between;    
+}
+
+ul[id="report"] > li[class="main"]{
+    padding: 12px 0;    
+    justify-content:space-between;
+    display: grid;
+    grid-template-columns: repeat(6, auto);
+}
+
+ul[id="report"] > li[class="main"] > span{ padding: 4px;}
+
+ul[id="report"] > li[class="main"] > span:nth-child(-n +6){
+    font-weight: bolder;
+    color: darkslateblue;
+}
+
+ul[id="report"] > li[class="main"] > span:nth-child(6n + 5){text-align: right;}
+
+ul[id="report"] > li[class="main"] > span:nth-child(6n + 6){text-align: right;}
+
+ul[id="report"] > li[class="main"] > span:nth-last-child(-n +6){
+    font-weight: bolder;
+    color: darkslateblue;
+}
+
+nav[class="menu"]{
+    height: fit-content;
+    font-weight: bolder;
+    color: white;
+    margin-top: 12px;
+    border-radius: 15px;
+    border-bottom: solid 4px pink;
+    background-image: linear-gradient(-45deg, 
+    PaleVioletRed 33%, purple 33% ,  purple 66% , PaleVioletRed 66%);
+    display: var(--mainDisplay);
+    justify-content: space-around;
+}
+
+nav[class="menu"] > button{
+    min-width: 15%;
+    font-weight: bolder;
+    margin: 2px;
+    border-radius: 5px;
+    background-color: thistle;
+    box-shadow: 2px 3px rebeccapurple;
+}
+
+@media print{
+    body, html {
+        width: unset !important;
+        min-width: unset !important;
+        height: unset !important;
+        min-height: unset !important;
+    }
+    ul[id="report"]{break-after: always;}
+}

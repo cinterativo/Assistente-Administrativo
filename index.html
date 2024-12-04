@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Portifólio</title>
+</head>
+<body>   
+    <fieldset>
+        <legend>Assistente Administrativo</legend>
+
+        <header> <h1>Financeiro:</h1> </header>
+
+        <main>        
+            <form action="" id="formInput">
+
+                <input type="date" data-set="[0,'T24:00:00',]" class="userInput" id="date">
+
+                <select data-set="" class="userInput" id="account" disabled>
+                    <option value="" selected disabled>Selecionar</option>
+                    <optgroup label="Entrada">
+                        <option value="Cliente">Estética</option>
+                        <option value="Cliente">Maquiagem</option>
+                    </optgroup>                
+                    <optgroup label="Saída">
+                        <option value="Compra">Compra</option>
+                        <option value="Despesa">Despesa</option>
+                        <option value="Investimento">Investimento</option>
+                    </optgroup>                
+                </select>
+
+                <select data-set="" class="userInput" id="subAccount" disabled>
+                    <option value="" selected disabled>Selecionar</option>
+                    <optgroup label="Cliente">
+                        <option value="">Cliente1</option>
+                        <option value="">Cliente2</option>
+                        <option value="">Cliente3</option>
+                    </optgroup>  
+                    <optgroup label="Compra">
+                        <option value="">Material de Estética</option>
+                        <option value="">Produtos de Maquiagem</option>
+                    </optgroup>
+                    <optgroup label="Despesa">
+                        <option value="">Aluguel e Condominio</option>
+                        <option value="">Agua, luz e comunicação</option>
+                        <option value="">Impostos e Taxas</option>
+                        <option value="">Material de Limpeza</option>
+                    </optgroup>                
+                    <optgroup label="Investimento">
+                    </optgroup> 
+                    <option value="Cliente" style="font-weight: bolder;
+                    background-color: black; color: yellow;">Adicionar Conta</option>               
+                </select>
+
+                <input type="text" data-set=" 0, 40000,20000, 30000, 21000, 15000, 70000, 12000, 9000, 7500" 
+                class="userInput" placeholder="R$ 0,00" id="currency" disabled>
+
+                <dialog class="" id="dialog">
+                    <input type="text" minlength="9" class="subAccount, Cliente"
+                    placeholder="cadastro" id="textDialog">
+                    <div style="background-image: linear-gradient(-45deg, gray 50%, thistle 10%);">
+                        <input type="button" value="Retornar" id="cancelDialog">
+                        <input type="button" value="Salvar" id="saveDialog" disabled>
+                    </div>
+                </dialog>
+
+                <div style="background-image: linear-gradient(-45deg,steelblue 50%, thistle 10%);">
+                    <input type="button" value="Cancelar" id="cancel">
+                    <input type="button" value="Salvar" id="save" disabled>
+                </div>
+            </form>                
+
+            <section id="tableContainer"> 
+                <table id="tableData">
+                    <thead>
+                        <tr class="register">
+                            <th></th>
+                            <th colspan="2">Registros:</th>
+                            <th colspan="3">
+                                <select name="" id="selectReport" style="float: right;">
+                                    <option value="" selected disabled>Relatório:</option>
+                                    <optgroup>
+                                        <option value="day">Dia Atual</option>
+                                        <option value="week">Semana Atual</option>
+                                        <option value="week-1">Semana Passada</option>
+                                        <option value="month">Mês Atual</option>
+                                        <option value="month-1">Ultimo Bimestre</option>
+                                        <option value="month-2">Ultimo Trimeste</option>
+                                        <option value="fullYear">Acumulado do Ano</option>
+                                    </optgroup>                                       
+                                </select> 
+                            </th>
+                        </tr>
+                        <tr>
+                            <th>utcID</th>
+                            <th>Data</th>
+                            <th>Conta</th>
+                            <th>Sub-Conta</th>
+                            <th>Entrada</th>
+                            <th>Saída</th>
+                        </tr>                    
+                    </thead>
+                    <tbody> 
+                        <tr>
+                            <td>1732898395000</td>	
+                            <td>29/11/2024</td>	
+                            <td>Despesa</td>	
+                            <td>Aluguel e Condominio</td>	
+                            <td>0,00</td>
+                            <td>720,00</td>
+                        </tr>
+                        <tr> 	
+                            <td>1732207277000</td>	
+                            <td>21/11/2024</td>	
+                            <td>Despesa</td>	
+                            <td>Agua, luz e comunicação</td>	
+                            <td>0,00</td>
+                            <td>130,00</td>
+                        </tr>
+                        <tr> 
+                        	<td>1730392927000</td>	
+                            <td>31/10/2024</td>
+                            <td>Despesa</td>	
+                            <td>Impostos e Taxas</td>	
+                            <td>0,00</td>
+                            <td>140,00</td>
+                        </tr>
+                        <tr> 
+                            <td>1727455370000</td>	
+                            <td>27/09/2024</td>	
+                            <td>Despesa</td>	
+                            <td>Material de Limpeza</td>	
+                            <td>0,00</td>
+                            <td>50,00</td>
+                        </tr>                                                  
+                    </tbody>
+                </table>
+            </section> 
+        </main>
+        <footer>
+            <ul id="report">
+                <li class="header">
+                    <span id="period"></span>
+                    <span> <input type="button" value="Imprimir:" id="btprint">  </span> 
+                    <span> <input type="button" value="Voltar:" id="btReport">  </span>                              
+                </li> 
+                <li class="main"> </li>          
+            </ul>              
+        </footer>   
+    </fieldset>
+        
+    <nav class="menu">
+        <button><a href="./projeto.html">Home</a></button>
+        <button><a href="./agenda.html">Agenda</a></button>
+        <button><a href="./index.html">Financeiro</a></button>        
+    </nav> 
+
+    <!-- <script src="./script.js"></script> -->
+    <script src="./demonstracao.js"></script>
+    <script src="script.py"></script>
+    
+</body>
+</html>
+
+
+
+        
